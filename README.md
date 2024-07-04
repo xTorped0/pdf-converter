@@ -23,11 +23,11 @@ bun dev
 Open [http://localhost:8081](http://localhost:8081) with your browser to see the result.
 U`re able to change in in package.json
 
-## TODO
+#### TODO
 
 I've struggled to write tests using Jest for react-pdf, but unfortunately, I encountered numerous issues, so I've decided to put it aside for better times. From what I found on the internet, it might be better to use Playwright instead of Jest.
 
-### Project Structure
+## Project Structure
 
 The project structure is standard for Next.js:
 
@@ -54,7 +54,7 @@ pdf-converter/
 └── ...
 ```
 
-### Main Modules
+## Main Modules
 
 **Saved PDFs Page (`pages/saved/index.tsx`):**
 This page displays the list of saved PDFs. It uses components like `PdfViewer` to render PDFs and hooks such as `useSaved` to manage the state of saved documents.
