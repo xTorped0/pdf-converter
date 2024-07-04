@@ -1,8 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+To start he project u have to install all dependencies via
 
-## Getting Started
+```bash
+npm i
+# or
+yarn install
+# or
+pnpm install
+```
 
-First, run the development server:
+After that, run the development server:
 
 ```bash
 npm run dev
@@ -14,23 +20,46 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:8081](http://localhost:8081) with your browser to see the result.
+U`re able to change in in package.json
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## TODO
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+I've struggled to write tests using Jest for react-pdf, but unfortunately, I encountered numerous issues, so I've decided to put it aside for better times. From what I found on the internet, it might be better to use Playwright instead of Jest.
 
-## Learn More
+### Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+The project structure is standard for Next.js:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+pdf-converter/
+├── src/
+│   ├── __tests__/
+│   │   └── PdfViewer.test.tsx
+│   ├── components/
+│   │   └── pdf/
+│   │       └── PfdViewer.tsx
+│   ├── app/
+│   │   └── (hooks)/
+│   │       └── useConvertor.ts
+│   │       └── useDialog.ts
+│   │   └── saved/
+│   │       └── index.tsx
+│   │   └── Converter.tsx
+├── jest.config.ts
+├── jest.setup.ts
+├── babel.config.js
+├── package.json
+├── tsconfig.json
+└── ...
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Main Modules
 
-## Deploy on Vercel
+**Saved PDFs Page (`pages/saved/index.tsx`):**
+This page displays the list of saved PDFs. It uses components like `PdfViewer` to render PDFs and hooks such as `useSaved` to manage the state of saved documents.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Converter Page (`pages/converter/index.tsx`):**
+This page provides a text-to-PDF conversion tool. It includes a form to input text, a button to trigger the conversion, and uses hooks like `useConvertor` to handle the conversion logic and `useDialog` to manage save dialogs.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
