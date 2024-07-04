@@ -5,10 +5,11 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import { Controllers } from './Controllers';
 import { useControllers } from './useControllers';
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-	'pdfjs-dist/build/pdf.worker.min.mjs',
-	import.meta.url
-).toString();
+// pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+// 	'pdfjs-dist/build/pdf.worker.min.mjs',
+// 	import.meta.url
+// ).toString();
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 export function PdfViewer(props: { url: string }) {
 	const { url } = props;

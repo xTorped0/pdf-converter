@@ -11,7 +11,7 @@ import { useConvertor } from './(hooks)/useConvertor';
 import { useDialog } from './(hooks)/useDialog';
 import { SaveDialog } from './SaveDialog';
 
-export function Convertor() {
+export function Converter() {
 	const { pdf, convertText, loading } = useConvertor();
 	const { isDialogOpen, setIsDialogOpen, handleSave } = useDialog(pdf);
 
@@ -37,6 +37,7 @@ export function Convertor() {
 				<textarea
 					name='text'
 					className='w-full text-black'
+					placeholder='Введіть текст для конвертації'
 				/>
 
 				<div className='flex gap-1 justify-center'>

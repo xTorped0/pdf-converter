@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Convertor } from './Convertor';
+import { Converter } from './Converter';
 
 export default function Home() {
 	return (
@@ -16,7 +16,7 @@ export default function Home() {
 					<li> Подивіться на створений PDF </li>
 				</ol>
 
-				<Convertor />
+				<Converter />
 
 				<Link
 					href='/saved'
