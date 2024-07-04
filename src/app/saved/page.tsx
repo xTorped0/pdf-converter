@@ -11,12 +11,6 @@ import { handleLoadBlob } from '@/utils/blob';
 
 import { useSaved } from './useSaved';
 
-// const pdfs = {
-// 	name: new Blob(),
-// 	asr: true,
-// 	sdasdq: true
-// };
-
 export default function Saved() {
 	const { pdfs, viewedPdf, removePdf, setPdfInView } = useSaved();
 
